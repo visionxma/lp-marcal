@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RadarBet — Teste Grátis o App de Oportunidades em Jogos de Futebol</title>
+  <meta name="description" content="Acesso liberado por 7 dias ao app usado por jogadores que acompanham sinais, estatísticas e oportunidades ao vivo. Acesso imediato, sem burocracia." />
+  <meta property="og:title" content="Teste Grátis — App de Oportunidades em Jogos de Futebol" />
+  <meta property="og:description" content="Sinais, estatísticas e oportunidades ao vivo, monitorados diariamente. Teste grátis por 7 dias." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="lp01">
+
+  <!-- SVG ICON SPRITE (minimalista, line-art) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="rbGrad" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#34c0ff"/><stop offset="1" stop-color="#0064b1"/>
+      </linearGradient>
+      <symbol id="logo-mark" viewBox="0 0 48 48">
+        <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#rbGrad)"/>
+        <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round">
+          <path d="M16 24 A8 8 0 0 1 24 32"/><path d="M16 19 A13 13 0 0 1 29 32"/><path d="M16 14 A18 18 0 0 1 34 32"/>
+        </g>
+        <circle cx="16" cy="32" r="2.7" fill="#ffffff"/><circle cx="31.5" cy="16.5" r="2.7" fill="#ffffff"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+      <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 8 3.2 2.4-1.2 3.8H9.9L8.8 10.4 12 8Z"/><path d="M12 8V3.5M15.2 10.4 19.6 9M14 14.2l2.6 3.7M10 14.2l-2.6 3.7M8.8 10.4 4.4 9"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2 2.5Z"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17 9.5 10.5l4 4L21 7"/><path d="M15 7h6v6"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"/></symbol>
+      <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Zm0 0 4.4-7.9a2 2 0 0 1 2.8 2.5L13 9h6.2a2 2 0 0 1 2 2.4l-1.4 7A2 2 0 0 1 17.8 20H7"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2.5"/><path d="M12 8V4M9 4h3M2 14h2M20 14h2M9 13v2M15 13v2"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.736-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#topo" aria-label="RadarBet">
+        <svg class="logo" aria-hidden="true"><use href="#logo-mark"/></svg> Radar<small>Bet</small>
+      </a>
+      <nav class="nav-links" aria-label="Seções">
+        <a href="#acesso">O que você tem</a>
+        <a href="#prova">Prova</a>
+        <a href="#como">Como funciona</a>
+      </nav>
+      <a class="btn btn-neon nav-cta" href="#cta">Testar grátis</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/img/hero.webp" width="1125" height="1500" fetchpriority="high" alt="" />
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content reveal">
+        <h1 class="display">Você tem <span class="hero-accent">7 dias grátis</span> pra testar o aplicativo que está mudando a forma de apostar em futebol.</h1>
+        <p class="lead">Os mesmos sinais e oportunidades que jogadores usam todos os dias — liberados pra você dentro do <b style="color:var(--neon-2)">grupo VIP</b>, de graça por 7 dias.</p>
+        <div class="actions">
+          <a class="btn btn-neon btn-lg" href="#cta">Quero testar o aplicativo agora</a>
+        </div>
+        <p class="cta-note"><b>Acesso liberado na hora.</b> Vagas limitadas — entre antes da maioria e aposte com responsabilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="strip" aria-hidden="true">
+    <div class="marquee">
+      <span>Oportunidades monitoradas diariamente</span>
+      <span>Entre antes da maioria</span>
+      <span>Atualizações ao vivo</span>
+      <span>Central esportiva exclusiva</span>
+      <span>Acesse gratuitamente</span>
+      <span>Oportunidades monitoradas diariamente</span>
+      <span>Entre antes da maioria</span>
+      <span>Atualizações ao vivo</span>
+      <span>Central esportiva exclusiva</span>
+      <span>Acesse gratuitamente</span>
+    </div>
+  </div>
+
+  <!-- QUALIFICAÇÃO -->
+  <section class="qualify" id="qualify">
+    <div class="container">
+      <div class="pain-card reveal">
+        <h2 class="headline" style="text-align:center;font-size:clamp(1.5rem,4.5vw,2.4rem)">
+          Se você aposta em futebol e já cansou de:
+        </h2>
+        <ul class="pain-list">
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span> <span>Entrar <b>atrasado</b> nas oportunidades</span></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span> <span>Ficar <b>perdido</b> analisando dezenas de jogos</span></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span> <span>Depender de <b>grupos aleatórios</b></span></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span> <span>Tomar decisões no impulso e <b>PERDER DINHEIRO</b></span></li>
+        </ul>
+        <p class="resolve">…esse aplicativo foi criado <span class="neon-text">pra você.</span></p>
+        <p class="sub">
+          Ao entrar no <b style="color:var(--neon-2)">grupo VIP</b> o aplicativo é liberado pra você: uma central com
+          <b style="color:var(--text)">jogos monitorados</b>, alertas e oportunidades atualizadas diariamente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ VAI TER ACESSO -->
+  <section id="acesso">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> O que você vai ter acesso</span>
+        <h2 class="headline">Tudo o que precisa em <span class="neon-text">um só lugar</span></h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="ic"><svg class="ico"><use href="#i-ball"/></svg></div>
+          <h3>Jogos monitorados ao vivo</h3>
+          <p>Partidas acompanhadas durante o dia inteiro, diariamente.</p>
+        </article>
+        <article class="card reveal" style="transition-delay:.06s">
+          <div class="ic"><svg class="ico"><use href="#i-chart"/></svg></div>
+          <h3>Alertas e sinais organizados</h3>
+          <p>Sem bagunça. Sem grupo lotado. Tudo no lugar certo.</p>
+        </article>
+        <article class="card reveal" style="transition-delay:.12s">
+          <div class="ic"><svg class="ico"><use href="#i-phone"/></svg></div>
+          <h3>Plataforma simples de usar</h3>
+          <p>Abra o app e veja tudo em poucos segundos.</p>
+        </article>
+        <article class="card reveal" style="transition-delay:.18s">
+          <div class="ic"><svg class="ico"><use href="#i-flame"/></svg></div>
+          <h3>Atualizações constantes</h3>
+          <p>Novas oportunidades entrando todos os dias.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA / AUTORIDADE -->
+  <section id="prova">
+    <div class="container proof-wrap">
+      <div class="proof-copy reveal">
+        <span class="eyebrow"><span class="dot"></span> Prova social</span>
+        <div class="bignum">
+          <span data-count="1417" data-suffix="+">0</span>
+        </div>
+        <h2 class="headline" style="font-size:clamp(1.3rem,3.6vw,2rem);margin:6px 0 14px">
+          Jogadores já testaram o aplicativo
+        </h2>
+        <p class="lead">
+          Todos os dias novos usuários entram para acompanhar os sinais e aproveitar as oportunidades
+          monitoradas pela plataforma.
+        </p>
+      </div>
+      <div class="proof-gallery reveal">
+        <div class="shot">
+          <div class="shot-head"><span><svg class="ico"><use href="#i-chart"/></svg> Dashboard</span><b>Hoje</b></div>
+          <div class="shot-body">
+            <div class="line"><span>Jogos monitorados</span><span class="green">14</span></div>
+            <div class="line"><span>Sinais ativos</span><span class="green">7</span></div>
+            <div class="line"><span>Oportunidades <svg class="ico"><use href="#i-flame"/></svg></span><span class="green">3</span></div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="shot-head"><span><svg class="ico"><use href="#i-chat"/></svg> Conversa</span><b>online</b></div>
+          <div class="shot-body">
+            <div class="bubble">Acabei de pegar o sinal! <svg class="ico"><use href="#i-flame"/></svg></div>
+            <div class="bubble me">Entrou cedo, parabéns <svg class="ico"><use href="#i-thumb"/></svg></div>
+            <div class="bubble">Plataforma ajuda demais</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="shot-head"><span><svg class="ico"><use href="#i-user"/></svg> Tipster</span><b>verificado</b></div>
+          <div class="shot-body stat-mini">
+            <b>+1.4k</b><small>Usuários ativos</small>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="shot-head"><span><svg class="ico"><use href="#i-trend"/></svg> Resultados</span><b>semana</b></div>
+          <div class="shot-body">
+            <div class="line"><span>Seg</span><span class="green"><svg class="ico"><use href="#i-trend"/></svg></span></div>
+            <div class="line"><span>Ter</span><span class="green"><svg class="ico"><use href="#i-trend"/></svg></span></div>
+            <div class="line"><span>Qua</span><span class="green"><svg class="ico"><use href="#i-trend"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Como funciona</span>
+        <h2 class="headline">Em <span class="neon-text">3 passos</span> você está dentro</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="connector" aria-hidden="true"></span>
+          <div class="num"></div>
+          <h3>Clique no botão</h3>
+          <p>Clique no botão abaixo e garanta sua vaga agora mesmo.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:.08s">
+          <span class="connector" aria-hidden="true"></span>
+          <div class="num"></div>
+          <h3>Entre no grupo VIP</h3>
+          <p>Você entra no nosso grupo VIP, onde o aplicativo é liberado.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:.16s">
+          <div class="num"></div>
+          <h3>Teste por 7 dias</h3>
+          <p>Acesse o app liberado e aproveite as oportunidades por 7 dias grátis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta" id="cta">
+    <div class="container">
+      <div class="box reveal">
+        <span class="eyebrow"><span class="dot"></span> Tempo limitado</span>
+        <h2 class="headline">Liberamos um teste gratuito por <span class="neon-text">tempo limitado</span></h2>
+        <p class="lead" style="max-width:560px">Clique abaixo, entre no grupo VIP e receba o aplicativo liberado agora mesmo.</p>
+        <div class="countdown" id="countdown" aria-label="Tempo restante da oferta">
+          <div class="unit"><b data-cd="h">00</b><small>horas</small></div>
+          <div class="unit"><b data-cd="m">00</b><small>min</small></div>
+          <div class="unit"><b data-cd="s">00</b><small>seg</small></div>
+        </div>
+        <a class="btn btn-neon btn-lg" href="#topo" data-cta="trial"><svg class="ico"><use href="#i-arrow"/></svg> Quero meu teste gratuito</a>
+        <p class="cta-note"><span><svg class="ico"><use href="#i-bolt"/></svg> Acesso imediato</span><span class="sep">•</span><span><svg class="ico"><use href="#i-unlock"/></svg> Sem burocracia</span><span class="sep">•</span><span><b>Vagas limitadas</b></span></p>
+        <p style="color:var(--muted);font-size:.9rem">
+          Procurando os jogos de hoje? <a href="jogos.html" style="color:var(--neon-2);text-decoration:underline">Veja o Bingo dos Jogos <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="ft-top">
+        <a class="brand" href="#topo"><svg class="logo" aria-hidden="true"><use href="#logo-mark"/></svg> Radar<small>Bet</small></a>
+        <nav class="nav-links" style="display:flex;flex-wrap:wrap">
+          <a href="#acesso">O que você tem</a>
+          <a href="#como">Como funciona</a>
+          <a href="jogos.html">Jogos de hoje</a>
+        </nav>
+      </div>
+      <p class="disclaimer">
+        Conteúdo informativo e de entretenimento esportivo. Apostas envolvem risco e podem causar perdas financeiras.
+        Aposte com responsabilidade e apenas valores que você pode perder. Proibido para menores de 18 anos.
+        Não há garantia de lucro ou de resultados.
+      </p>
+      <p style="margin-top:14px">© <span id="year"></span> RadarBet • Central esportiva exclusiva.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a class="btn btn-neon" href="#cta"><svg class="ico"><use href="#i-arrow"/></svg> Quero testar grátis agora</a>
+  </div>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Arquivos-fonte das imagens (HEIC) — o site usa as versões .webp
+*.HEIC
+*.heic
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs / temporários
+*.log
+node_modules/
