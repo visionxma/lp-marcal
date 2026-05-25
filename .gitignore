@@ -1,7 +1,3 @@
-# Arquivos-fonte das imagens (HEIC) — o site usa as versões .webp
-*.HEIC
-*.heic
-
 # OS / editor
 .DS_Store
 Thumbs.db
