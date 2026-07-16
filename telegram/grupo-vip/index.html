@@ -1,0 +1,826 @@
+<meta charset="UTF-8" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXVVC6SC');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a1f17" />
+<meta name="robots" content="noindex, nofollow" />
+<title>João Marçal — Grupo VIP</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter','system-ui','sans-serif'],
+          display: ['"Space Grotesk"','Inter','sans-serif'],
+        },
+        colors: {
+          bg:        'hsl(158 42% 6%)',
+          fg:        'hsl(150 18% 96%)',
+          card:      'hsl(160 30% 10%)',
+          border:    'hsl(158 22% 19%)',
+          muted:     'hsl(158 24% 14%)',
+          mutedfg:   'hsl(150 10% 64%)',
+          secondary: 'hsl(158 24% 15%)',
+          primary:   'hsl(148 78% 45%)',
+          primaryfg: 'hsl(158 45% 6%)',
+          primaryglow:'hsl(142 85% 55%)',
+          accent:    'hsl(76 85% 55%)',
+          danger:    'hsl(0 72% 58%)',
+        }
+      }
+    }
+  };
+</script>
+<style>
+  html{ -webkit-tap-highlight-color: transparent; }
+  body{ background:hsl(158 42% 6%); color:hsl(150 18% 96%); font-family:'Inter',system-ui,sans-serif; min-height:100vh; overscroll-behavior:none; }
+  h1,h2,h3,.font-display{ font-family:'Space Grotesk','Inter',sans-serif; letter-spacing:-0.02em;}
+  .text-gradient-primary{ background:linear-gradient(135deg,hsl(148 80% 50%),hsl(162 70% 42%)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .bg-gradient-primary{ background:linear-gradient(135deg,hsl(148 78% 46%),hsl(162 70% 40%)); }
+  .shadow-cta{ box-shadow:0 8px 24px -8px hsl(148 78% 32% / 0.6); }
+  .shadow-card{ box-shadow:0 4px 16px -4px hsl(158 40% 2% / 0.5); }
+  .quiz-card{ position:relative; overflow:hidden; border-radius:1rem; border:1px solid hsl(158 22% 19%); background:hsl(160 30% 10%); box-shadow:0 4px 16px -4px hsl(158 40% 2% / 0.5); }
+
+  @keyframes slide-up { from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:translateY(0)} }
+  @keyframes fade-in { from{opacity:0} to{opacity:1} }
+  @keyframes progress-shine { 0%{transform:translateX(-100%)} 100%{transform:translateX(200%)} }
+  @keyframes spin-slow { to{transform:rotate(360deg)} }
+  .animate-slide-up{ animation:slide-up 0.45s cubic-bezier(0.22,1,0.36,1) both; }
+  .animate-fade-in{ animation:fade-in 0.4s ease-out both; }
+  .animate-spin-slow{ animation:spin-slow 1.4s linear infinite; }
+
+  /* Slide to unlock */
+  @keyframes ctaShimmer { 0%{transform:translateX(-100%)} 100%{transform:translateX(450%)} }
+  @keyframes arrowNudge { 0%,100%{transform:translateX(0); opacity:.75} 50%{transform:translateX(4px); opacity:1} }
+  @keyframes handleNudge { 0%,100%{transform:translateX(0) rotate(0)} 25%{transform:translateX(8px) rotate(28deg)} 50%{transform:translateX(0) rotate(0)} }
+  @keyframes handlePulse { 0%{transform:translate(-50%,-50%) scale(1); opacity:.5} 100%{transform:translate(-50%,-50%) scale(2); opacity:0} }
+  @keyframes checkPop { 0%{opacity:0; transform:scale(.4)} 60%{opacity:1; transform:scale(1.2)} 100%{opacity:1; transform:scale(1)} }
+  @keyframes goalText { 0%{opacity:0; transform:scale(.5)} 40%{opacity:1; transform:scale(1.18)} 70%{transform:scale(.95)} 100%{opacity:1; transform:scale(1)} }
+  @keyframes confettiPop { 0%{opacity:1; transform:translate(0,0) rotate(0)} 100%{opacity:0; transform:translate(var(--cx),var(--cy)) rotate(var(--cr))} }
+
+  /* Result animations */
+  @keyframes vipPop { 0%{transform:scale(.4); opacity:0} 60%{transform:scale(1.1); opacity:1} 100%{transform:scale(1); opacity:1} }
+  @keyframes vipDraw { 0%{transform:scale(0); opacity:0} 60%{transform:scale(1.25); opacity:1} 100%{transform:scale(1); opacity:1} }
+  @keyframes vipPulse { 0%{transform:scale(.95); opacity:.5} 70%{transform:scale(1.6); opacity:0} 100%{transform:scale(1.6); opacity:0} }
+  @keyframes vipCtaPulse { 0%{transform:scale(1); opacity:.55} 70%{transform:scale(1.06); opacity:0} 100%{transform:scale(1.06); opacity:0} }
+  @keyframes vipCtaBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+  @keyframes vipCtaClick { 0%{transform:scale(1)} 35%{transform:scale(.94)} 70%{transform:scale(1.04)} 100%{transform:scale(1)} }
+
+  .icon-sm{ width:14px; height:14px; }
+  .icon-md{ width:18px; height:18px; }
+  .icon-lg{ width:24px; height:24px; }
+</style>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXVVC6SC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="app"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+/* =====================================================================
+   CONFIG JOÃO MARÇAL  —  EDITE SÓ AQUI  (não precisa mexer no resto do código)
+   =====================================================================
+   • REDIRECT_URL  = pra onde o lead vai DEPOIS de preencher o formulário.
+   • LEAD_ENDPOINT = URL do seu webhook/CRM que RECEBE os dados do lead.
+                     Deixe '' que o envio é ignorado (o lead ainda é salvo
+                     no navegador e o redirect acontece normal).
+   • FB_PIXEL_ID   = ID do Pixel da Meta. Deixe '' pra desativar o Pixel.
+   ===================================================================== */
+const CONFIG = {
+  LINK_TELEGRAM:   'https://t.me/jotapemarcalfree',
+  LINK_COMUNIDADE: 'https://t.me/jotapemarcalfree',
+  LINK_X1:         'https://t.me/jotapemarcalfree',
+
+  REDIRECT_URL:    'https://t.me/jotapemarcalfree',
+  LEAD_ENDPOINT:   'https://script.google.com/macros/s/AKfycbxAH9M17MpHKPtLjH6M7EMftN4xjM7o5lm1J2CUEPMtCdij8hNA3Vf8S7zrCYuKUqE1yw/exec',
+  LEAD_TOKEN:      'joaomarcal_9ce1a13d45fe1e9d94c0b8c7',
+  FB_PIXEL_ID:     '',
+  ORIGEM:          'joaomarcal_grupo_vip',
+};
+
+/* ===================== DATA ===================== */
+const QUESTIONS = {
+  betAmount: {
+    id:'betAmount',
+    title:'Quanto você curtiria colocar pra tentar cravar?',
+    subtitle:'Pra encaixar você no palpite certo.',
+    options:[
+      {id:'r1_10',icon:'dice',label:'R$ 1 a R$ 10',description:'Só o troco pra testar'},
+      {id:'r10_30',icon:'wallet',label:'R$ 10 a R$ 30',description:'Um valor confortável'},
+      {id:'r30_50',icon:'banknote',label:'R$ 30 a R$ 50',description:'Pra jogar com mais peso'},
+      {id:'r50_100',icon:'banknote',label:'R$ 50 a R$ 100',description:'Modo pesado, pra cravar grande'},
+    ]
+  }
+};
+
+const STEPS = [
+  {kind:'question', q:'betAmount'},
+];
+const TOTAL_Q = STEPS.filter(s=>s.kind==='question').length;
+const BG_MOBILE = 'assets/hero.jpg';
+const BG_DESKTOP = 'assets/hero.jpg';
+
+const LEAGUE_LABEL = {champions:'da Champions League', brasileirao:'do Brasileirão', premier:'da Premier League', libertadores:'da Libertadores', copas:'das Copas e Eliminatórias','':'do dia'};
+const LEAGUE_SHORT = {champions:'na Champions', brasileirao:'no Brasileirão', premier:'na Premier League', libertadores:'na Libertadores', copas:'nas Copas Internacionais','':'no futebol'};
+const LEAGUE_SUBLBL = {champions:'na Champions', brasileirao:'no Brasileirão', premier:'na Premier', libertadores:'na Libertadores', copas:'nas Copas'};
+const RESULT_HOOK = {losing:'Pra quem tá no vermelho, o estilo certo muda tudo.', breakeven:'Pra sair do zero a zero, o estilo de jogo é decisivo.', winning:'Já que você lucra, vamos escalar do jeito certo.','':''};
+const EXP_HOOK = {novice:'Sem julgamentos, só quero entender seu ponto de partida.', intermediate:'Você já tem experiência — agora é hora de escolher um estilo.', experienced:'Você manja do mercado — vamos calibrar com precisão.','':''};
+const RESULT_ATENCAO_OA = {losing:'Aqui você ganha o empurrão que faltava pra voltar a se divertir e ter chance de retorno.', breakeven:'Aqui você ganha o empurrão que faltava pra começar a se divertir e ter chance de retorno.', winning:'Aqui você mantém a diversão e ainda aumenta suas chances de retorno apostando pouco.','':'Aqui você ganha o empurrão que faltava pra se divertir apostando pouco e com chance de retorno.'};
+const BETTYPE_SOL = {r1_10:'entradas com troco pra você se divertir', r10_30:'entradas confortáveis com chance de retorno', r30_50:'entradas mais agressivas pra crescer', r50_100:'entradas pesadas com odds altas','':'entradas filtradas direto no seu WhatsApp'};
+
+const REDIRECT_URL = CONFIG.REDIRECT_URL;
+
+/* ===================== STATE ===================== */
+const state = {
+  stage:'intro', // intro, quiz, analyzing, result
+  stepIndex:0,
+  answers:{betAmount:''},
+};
+
+/* ===================== COUNTDOWN ===================== */
+let cdSeconds = 15*60;
+setInterval(()=>{
+  if(cdSeconds>0) cdSeconds--;
+  const mm = String(Math.floor(cdSeconds/60)).padStart(2,'0');
+  const ss = String(cdSeconds%60).padStart(2,'0');
+  const mmEl = document.getElementById('cd-mm'); const ssEl = document.getElementById('cd-ss');
+  if(mmEl) mmEl.textContent = mm; if(ssEl) ssEl.textContent = ss;
+  // result page timer
+  const rmm = document.getElementById('r-mm'); const rss = document.getElementById('r-ss');
+  if(rmm) rmm.textContent = mm; if(rss) rss.textContent = ss;
+},1000);
+
+/* ===================== RENDER ===================== */
+const app = document.getElementById('app');
+function render(){
+  window.scrollTo({top:0, behavior:'auto'});
+  if(state.stage==='intro') app.innerHTML = renderIntro();
+  else if(state.stage==='quiz') app.innerHTML = renderStep();
+  else if(state.stage==='analyzing') app.innerHTML = renderAnalyzing();
+  else if(state.stage==='result') app.innerHTML = renderResult();
+  lucide.createIcons();
+  bind();
+}
+
+/* ----- INTRO ----- */
+function renderIntro(){
+  return `
+  <div class="relative flex min-h-[100dvh] flex-col items-center justify-start px-5 pb-10 pt-[280px] sm:pt-[320px]">
+    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[360px] sm:h-[440px] overflow-hidden">
+      <picture>
+        <source media="(min-width: 768px)" srcset="${BG_DESKTOP}"/>
+        <img decoding="async" src="${BG_MOBILE}" alt="" aria-hidden class="h-full w-full object-cover object-center"/>
+      </picture>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-bg"></div>
+      <div class="absolute inset-0 bg-bg/20"></div>
+    </div>
+    <div class="w-full max-w-md animate-slide-up">
+      <h1 class="text-center font-display text-[30px] font-bold leading-[1.1] sm:text-[36px]">
+        Entre no <span class="text-gradient-primary">Grupo VIP</span> que mais aumenta banca no Brasil
+      </h1>
+      <p class="mx-auto mt-3 max-w-sm text-center text-[15px] leading-relaxed text-mutedfg">
+        Bilhetes analisados pra copiar e colar. <span class="text-fg">+82 unidades positivas nos últimos 30 dias.</span>
+      </p>
+      <div class="mt-7 quiz-card p-5 sm:p-6">
+        <div class="space-y-2">
+          ${[
+            {icon:'trophy', label:'Entradas analisadas todos os dias'},
+            {icon:'flame', label:'ØDDs com alto potencial de acerto'},
+            {icon:'shield-check', label:'Gestão pensada pra banca pequena'},
+          ].map(b=>`
+            <div class="flex items-center gap-3 rounded-lg border border-border bg-secondary/40 px-3.5 py-2.5">
+              <i data-lucide="${b.icon}" class="icon-sm shrink-0 text-primary"></i>
+              <span class="text-[13.5px] font-medium text-fg">${b.label}</span>
+            </div>`).join('')}
+        </div>
+        ${slideToGoalHTML('Quero acesso ao Grupo VIP')}
+        <p class="mt-3 text-center text-[11px] text-mutedfg">Responda algumas perguntas rápidas e libere sua vaga.</p>
+      </div>
+      <div class="mt-5 flex items-center justify-center gap-2 text-xs text-mutedfg">
+        <div class="flex">
+          ${Array.from({length:5}).map(()=>`<svg class="h-3.5 w-3.5 fill-accent" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.78L10 14.77l-5.2 2.73.99-5.78L1.58 7.62l5.82-.85L10 1.5z"/></svg>`).join('')}
+        </div>
+        <span>98% das vagas esgotadas · últimas disponíveis</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function slideToGoalHTML(label){
+  return `
+  <div class="mt-5 select-none" id="stg-wrap">
+    <div id="stg-track" class="relative h-14 w-full cursor-pointer overflow-hidden rounded-full bg-primary shadow-cta">
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" id="stg-shimmer-wrap">
+        <div class="absolute inset-y-0 w-32" style="animation:ctaShimmer 2.6s linear infinite; background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)"></div>
+      </div>
+      <div id="stg-label" class="pointer-events-none absolute inset-0 flex items-center justify-center gap-2 px-16 text-center text-[14px] font-bold uppercase tracking-wider text-primaryfg">
+        <span>${label}</span>
+        <i data-lucide="arrow-right" class="icon-sm opacity-80" style="animation:arrowNudge 1.4s ease-in-out infinite"></i>
+      </div>
+      <div id="stg-handle-wrap" class="absolute top-1/2 -translate-y-1/2" style="left:4px; transition:left .3s ease-out;">
+        <span id="stg-halo" class="pointer-events-none absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/40" style="animation:handlePulse 1.8s ease-out infinite"></span>
+        <button id="stg-handle" type="button" aria-label="Arraste para liberar"
+          class="relative flex h-12 w-12 cursor-grab touch-none items-center justify-center rounded-full bg-white text-[22px] leading-none shadow-md ring-1 ring-black/5 active:cursor-grabbing"
+          style="animation:handleNudge 1.8s ease-in-out infinite">
+          <span id="stg-handle-icon">⚽</span>
+        </button>
+      </div>
+      <div id="stg-goal" class="pointer-events-none absolute inset-0 hidden items-center justify-center">
+        <span class="font-display text-[22px] font-extrabold uppercase tracking-[0.25em] text-primaryfg" style="text-shadow:0 2px 6px rgba(0,0,0,.35); animation:goalText .9s cubic-bezier(0.34,1.56,0.64,1) forwards">GOOOL!</span>
+      </div>
+      <div id="stg-confetti" class="pointer-events-none absolute inset-0 hidden overflow-hidden"></div>
+    </div>
+    <p id="stg-tip" class="mt-2 text-center text-[11px] text-mutedfg">Toque ou arraste a bola pra liberar</p>
+  </div>`;
+}
+
+function initSlideToGoal(onDone){
+  const track = document.getElementById('stg-track');
+  const handleWrap = document.getElementById('stg-handle-wrap');
+  const handle = document.getElementById('stg-handle');
+  const halo = document.getElementById('stg-halo');
+  const labelEl = document.getElementById('stg-label');
+  const goalEl = document.getElementById('stg-goal');
+  const tip = document.getElementById('stg-tip');
+  const confetti = document.getElementById('stg-confetti');
+  const shimmer = document.getElementById('stg-shimmer-wrap');
+  const HANDLE=48, PAD=4;
+  let maxX=0,x=0,dragging=false,done=false,touched=false;
+  const update=()=>{ maxX = track.clientWidth - HANDLE - PAD*2; };
+  update();
+  window.addEventListener('resize',update);
+
+  function setX(v){ x = Math.max(0, Math.min(maxX, v)); handleWrap.style.left = (x+PAD)+'px'; handle.style.transform = `rotate(${x*5}deg)`; }
+  function finish(){
+    if(done) return;
+    done=true; setX(maxX);
+    labelEl.classList.add('hidden'); shimmer.classList.add('hidden');
+    halo.style.display='none';
+    handle.style.animation='none'; handle.style.transform='rotate(0) scale(.95)';
+    document.getElementById('stg-handle-icon').outerHTML = '<i data-lucide="check" class="text-primary" style="width:24px;height:24px;animation:checkPop .4s cubic-bezier(0.34,1.56,0.64,1) forwards" stroke-width="3"></i>';
+    lucide.createIcons();
+    goalEl.classList.remove('hidden'); goalEl.classList.add('flex');
+    confetti.classList.remove('hidden');
+    const colors=['#fff','hsl(42 85% 60%)','hsl(48 100% 60%)','hsl(0 85% 60%)','hsl(200 90% 60%)'];
+    for(let i=0;i<16;i++){
+      const dx=(Math.random()-.5)*220, dy=-(30+Math.random()*70), rot=Math.random()*720-360, delay=Math.random()*.15, left=50+(Math.random()-.5)*60;
+      const s=document.createElement('span');
+      s.className='absolute h-2 w-1.5 rounded-[1px]';
+      s.style.cssText=`left:${left}%;top:50%;background:${colors[i%colors.length]};animation:confettiPop 1s ease-out ${delay}s forwards;--cx:${dx}px;--cy:${dy}px;--cr:${rot}deg`;
+      confetti.appendChild(s);
+    }
+    tip.textContent='Acesso liberado, redirecionando…';
+    setTimeout(onDone, 1400);
+  }
+  handle.addEventListener('pointerdown',e=>{ if(done) return; dragging=true; touched=true; halo.style.display='none'; handle.style.animation='none'; handle.setPointerCapture(e.pointerId); });
+  handle.addEventListener('pointermove',e=>{
+    if(!dragging||done) return;
+    const r=track.getBoundingClientRect();
+    handleWrap.style.transition='none';
+    setX(e.clientX - r.left - HANDLE/2);
+    if(x>=maxX-2){ dragging=false; finish(); }
+  });
+  const up=()=>{ if(done) return; dragging=false; handleWrap.style.transition='left .3s ease-out'; if(maxX>0 && x/maxX>=0.4) finish(); else setX(0); };
+  handle.addEventListener('pointerup',up); handle.addEventListener('pointercancel',up);
+  track.addEventListener('click',()=>{ if(done||dragging) return; if(x<=2){ touched=true; halo.style.display='none'; handle.style.animation='none'; handleWrap.style.transition='left .28s cubic-bezier(0.5,0,0.75,0)'; setX(maxX); setTimeout(finish,280); } });
+}
+
+/* ----- QUIZ STEP ----- */
+function questionNumberOf(idx){
+  let c=0; for(let i=0;i<=idx;i++){ if(STEPS[i].kind==='question') c++; } return c;
+}
+function personalize(qid){
+  const q = JSON.parse(JSON.stringify(QUESTIONS[qid]));
+  const a = state.answers;
+  if(q.id==='betType' && a.league && LEAGUE_SUBLBL[a.league]){
+    q.subtitle = `Vamos te encaixar no fluxo certo de entradas ${LEAGUE_SUBLBL[a.league]}.`;
+  }
+  if(q.id==='result' && a.experience){ q.subtitle = EXP_HOOK[a.experience] || q.subtitle; }
+  if(q.id==='style' && a.result){ q.subtitle = RESULT_HOOK[a.result] || q.subtitle; }
+  return q;
+}
+
+function renderStep(){
+  const step = STEPS[state.stepIndex];
+  if(step.kind==='question'){
+    const q = personalize(step.q);
+    const qn = questionNumberOf(state.stepIndex);
+    const pct = Math.round((qn/TOTAL_Q)*100);
+    return `
+    <div class="flex min-h-[100dvh] flex-col px-5 py-6">
+      <div class="mx-auto w-full max-w-md">
+        <div class="mb-6 flex items-center gap-3">
+          ${state.stepIndex>0 ? `
+            <button id="qBack" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-card text-mutedfg transition hover:border-primary/50 hover:text-fg active:scale-95" aria-label="Voltar">
+              <i data-lucide="arrow-left" class="icon-sm"></i>
+            </button>` : `<div class="h-9 w-9"></div>`}
+          <div class="flex-1">
+            <div class="mb-2 flex items-center justify-between text-[11px] font-medium uppercase tracking-wider text-mutedfg">
+              <span>Etapa <span class="text-fg">${qn}</span> de ${TOTAL_Q}</span><span>${pct}%</span>
+            </div>
+            <div class="relative h-1.5 w-full overflow-hidden rounded-full bg-muted">
+              <div class="relative h-full rounded-full bg-gradient-primary transition-all duration-500" style="width:${pct}%">
+                <div class="absolute inset-0 rounded-full opacity-50" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent); animation:progress-shine 2.2s linear infinite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="animate-slide-up">
+          <h2 class="font-display text-[26px] font-bold leading-tight sm:text-[30px]">${q.title}</h2>
+          ${q.subtitle?`<p class="mt-2 text-[14px] leading-relaxed text-mutedfg sm:text-[15px]">${q.subtitle}</p>`:''}
+          <div class="mt-6 space-y-2.5" id="optsWrap">
+            ${q.options.map(opt=>`
+              <button data-opt="${opt.id}" class="opt group relative flex w-full items-center gap-3.5 overflow-hidden rounded-xl border border-border bg-card p-3.5 text-left transition-all duration-200 hover:border-primary/60 hover:bg-secondary/60 active:scale-[.99]">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary/60 text-mutedfg group-hover:text-fg transition-all opt-icon">
+                  <i data-lucide="${opt.icon}" class="icon-md" stroke-width="2"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-[15px] font-semibold leading-snug text-fg">${opt.label}</div>
+                  ${opt.description?`<div class="mt-0.5 text-[12.5px] leading-snug text-mutedfg">${opt.description}</div>`:''}
+                </div>
+                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-border bg-transparent text-transparent transition-all opt-check">
+                  <i data-lucide="check" class="icon-sm" stroke-width="3"></i>
+                </div>
+              </button>`).join('')}
+          </div>
+        </div>
+        <p class="mt-7 text-center text-[11px] text-mutedfg">Toque pra selecionar — avançamos automaticamente</p>
+      </div>
+    </div>`;
+  }
+  return renderInterstitial();
+}
+
+function renderInterstitial(){
+  return `
+  <div class="flex min-h-[100dvh] flex-col px-5 py-8 pb-28">
+    <div class="mx-auto w-full max-w-md animate-slide-up">
+      <div class="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-wider text-mutedfg">
+        <i data-lucide="flame" class="icon-sm text-primary"></i>
+        Veja o que eles têm a dizer
+      </div>
+      <h2 class="mt-3 font-display text-[26px] font-bold leading-tight sm:text-[30px]">
+        Veja o que eles <span class="text-gradient-primary">têm a dizer</span>
+      </h2>
+      <p class="mt-2 text-[14px] leading-relaxed text-mutedfg sm:text-[15px]">
+        Alguns dos membros que entraram no grupo VIP do João Marçal já lucraram pelo menos 1 vez com as entradas.
+      </p>
+
+      <!-- Slider de prints (cards estilizados) -->
+      <div class="relative mt-5 overflow-hidden rounded-2xl border border-border bg-secondary/40 p-2">
+        <div class="overflow-hidden rounded-xl bg-bg" id="prints-viewport">
+          <div class="flex transition-transform duration-500 ease-out" id="prints-track">
+            ${[
+              {name:'João P.', text:'Cravei a primeira entrada com 20 reais. Voltei com 300 e ainda tô em choque.'},
+              {name:'Marina L.', text:'Tô há 1 semana no grupo e já saí no positivo. Pra mim, isso é surreal.'},
+              {name:'Diego A.', text:'Sigo as análises certinho, agora é só copiar, torcer e comemorar com a tropa.'},
+            ].map(p=>`
+              <div class="w-full shrink-0 p-5">
+                <div class="rounded-2xl border border-border bg-card p-4">
+                  <div class="flex items-center gap-2">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-primary text-[13px] font-bold text-primaryfg">${p.name.charAt(0)}</div>
+                    <div class="text-[13px] font-semibold text-fg">${p.name}</div>
+                    <i data-lucide="badge-check" class="icon-sm text-primary"></i>
+                  </div>
+                  <p class="mt-3 text-[14px] leading-relaxed text-fg/90">"${p.text}"</p>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
+        <button id="printPrev" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-1.5 text-fg backdrop-blur hover:bg-bg" aria-label="Anterior"><i data-lucide="chevron-left" class="icon-sm"></i></button>
+        <button id="printNext" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-1.5 text-fg backdrop-blur hover:bg-bg" aria-label="Próximo"><i data-lucide="chevron-right" class="icon-sm"></i></button>
+        <div class="mt-2 flex justify-center gap-1.5" id="prints-dots"></div>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-border bg-secondary/40 p-4">
+        <p class="text-[13.5px] leading-relaxed text-fg">
+          Não é todo dia que crava, mas quando a gente crava, o resultado pode ser
+          <span class="font-semibold text-primary"> a partir de 2 mil de retorno</span>.
+        </p>
+        <p class="mt-2 text-[13px] leading-relaxed text-mutedfg">
+          É isso que você pode correr atrás junto com os bilhetes filtrados que envio pra tropa.
+        </p>
+      </div>
+
+      <!-- Resultados recentes -->
+      <div class="mt-6 quiz-card overflow-hidden">
+        <div class="flex items-center justify-between border-b border-border px-4 py-2.5">
+          <div class="text-[10.5px] font-bold uppercase tracking-wider text-primary">Resultados recentes</div>
+          <div class="inline-flex items-center gap-1 text-[10px] font-semibold text-mutedfg">
+            <i data-lucide="badge-check" class="icon-sm text-primary"></i>Verificados
+          </div>
+        </div>
+        <div class="relative bg-secondary/30 p-3">
+          <div class="overflow-hidden rounded-xl border border-border bg-bg" id="bil-viewport">
+            <div class="flex transition-transform duration-500 ease-out" id="bil-track">
+              ${[
+                {t:'Operário PR x Fortaleza', odd:'12.40', prize:'R$ 10.000'},
+                {t:'Galatasaray x Fenerbahce', odd:'10.85', prize:'R$ 8.750'},
+                {t:'Torino x Inter de Milão', odd:'9.92', prize:'R$ 8.000'},
+              ].map(b=>`
+                <div class="w-full shrink-0 p-5">
+                  <div class="rounded-xl border border-border bg-card p-4">
+                    <div class="text-[11px] uppercase tracking-wider text-mutedfg">Bilhete cravado</div>
+                    <div class="mt-1 text-[15px] font-bold text-fg">${b.t}</div>
+                    <div class="mt-3 flex items-baseline justify-between border-t border-border pt-3">
+                      <div>
+                        <div class="text-[10px] uppercase tracking-wider text-mutedfg">Odd</div>
+                        <div class="font-display text-[20px] font-bold text-accent">${b.odd}</div>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-[10px] uppercase tracking-wider text-mutedfg">Retorno</div>
+                        <div class="font-display text-[20px] font-bold text-primary">${b.prize}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>`).join('')}
+            </div>
+          </div>
+          <button id="bilPrev" class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-1.5 text-fg backdrop-blur hover:bg-bg" aria-label="Anterior"><i data-lucide="chevron-left" class="icon-sm"></i></button>
+          <button id="bilNext" class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-1.5 text-fg backdrop-blur hover:bg-bg" aria-label="Próximo"><i data-lucide="chevron-right" class="icon-sm"></i></button>
+          <div class="mt-3 flex justify-center gap-1.5" id="bil-dots"></div>
+        </div>
+        <div class="relative overflow-hidden border-t border-accent/30 p-4" style="background:radial-gradient(circle at top left,hsl(42 85% 60% / .18),transparent 60%),radial-gradient(circle at bottom right,hsl(152 65% 45% / .18),transparent 60%)">
+          <div class="relative flex items-center gap-3">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-accent/50 text-accent" style="background:linear-gradient(135deg,hsl(42 85% 60% / .3),hsl(42 85% 60% / .1))">
+              <i data-lucide="trophy" class="icon-md"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="inline-flex items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-accent">
+                <i data-lucide="flame" style="width:10px;height:10px"></i>Recorde do último mês
+              </div>
+              <div class="mt-1 flex items-baseline gap-1.5">
+                <span class="font-display text-[22px] font-extrabold leading-none text-fg">475</span>
+                <span class="font-display text-[14px] font-bold leading-none text-primary">greens</span>
+                <span class="text-[11.5px] font-semibold uppercase tracking-wider text-mutedfg">em 30 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="interCta" class="mt-5 h-12 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-primary text-[15px] font-semibold uppercase tracking-wide text-primaryfg shadow-cta hover:scale-[1.01] active:scale-[.99] transition-transform">
+        Continuar quiz <i data-lucide="arrow-right" class="icon-sm"></i>
+      </button>
+    </div>
+  </div>`;
+}
+
+/* ----- ANALYZING ----- */
+const ANALYZE_STEPS = ['Lendo suas respostas','Cruzando com a base de +300K membros','Identificando seu perfil','Selecionando o grupo ideal pra você'];
+function renderAnalyzing(){
+  return `
+  <div class="flex min-h-[100dvh] flex-col items-center justify-center px-5 py-10">
+    <div class="w-full max-w-md animate-slide-up">
+      <div class="quiz-card p-6 sm:p-7">
+        <div class="flex items-center justify-center">
+          <div class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary">
+            <i data-lucide="shield-check" class="text-white" style="width:32px;height:32px" stroke-width="2.4"></i>
+            <i data-lucide="loader-2" class="absolute -inset-1 text-primary/40 animate-spin-slow" style="width:72px;height:72px" stroke-width="1.5"></i>
+          </div>
+        </div>
+        <h2 class="mt-5 text-center font-display text-[22px] font-bold leading-tight sm:text-2xl">Estamos selecionando o grupo ideal pra você</h2>
+        <div class="mt-6">
+          <div class="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-mutedfg">
+            <span>Progresso</span><span id="an-pct" class="text-fg">0%</span>
+          </div>
+          <div class="mt-1.5 relative h-2 w-full overflow-hidden rounded-full bg-muted">
+            <div id="an-bar" class="h-full rounded-full bg-gradient-primary transition-all duration-500" style="width:0%"></div>
+          </div>
+        </div>
+        <ul class="mt-6 space-y-3.5" id="an-list">
+          ${ANALYZE_STEPS.map((s,i)=>`
+            <li data-i="${i}" class="flex items-center gap-3 text-[14px] transition-all opacity-35">
+              <div class="step-dot flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border text-transparent transition-all">
+                <i data-lucide="check" style="width:12px;height:12px" stroke-width="3"></i>
+              </div>
+              <span class="step-label leading-snug text-mutedfg">${s}</span>
+            </li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function runAnalyzing(){
+  let i = 0; const total = ANALYZE_STEPS.length;
+  if(total===0){ state.stage='result'; render(); return; }
+  const tick = ()=>{
+    const pct = Math.round(((i+1)/total)*100);
+    document.getElementById('an-pct').textContent = pct+'%';
+    document.getElementById('an-bar').style.width = pct+'%';
+    document.querySelectorAll('#an-list li').forEach((li,idx)=>{
+      const done = idx<=i, current = idx===i;
+      li.classList.toggle('opacity-35', !done && !current);
+      const dot = li.querySelector('.step-dot');
+      const label = li.querySelector('.step-label');
+      if(done){ dot.style.background='hsl(148 78% 48%)'; dot.style.borderColor='hsl(148 78% 48%)'; dot.style.color='#fff'; label.classList.remove('text-mutedfg'); label.classList.add('text-fg','font-medium'); }
+      else if(current){ dot.style.borderColor='hsl(148 78% 48%)'; dot.style.color='hsl(148 78% 48%)'; dot.style.background='hsl(52 100% 58% / .15)'; label.classList.remove('text-mutedfg'); label.classList.add('text-fg','font-medium'); }
+    });
+    if(i>=total-1){ setTimeout(()=>{ state.stage='result'; render(); }, 300); return; }
+    i++; setTimeout(tick, 650);
+  };
+  tick();
+}
+
+/* ----- RESULT ----- */
+function renderResult(){
+  const a = state.answers;
+  const betLabel = a.betAmount ? {r1_10:'com poucos reais', r10_30:'com valor confortável', r30_50:'com mais peso', r50_100:'no modo pesado'}[a.betAmount] || '' : '';
+  const bet = BETTYPE_SOL[a.betAmount||''];
+  const story = `Sua resposta foi anotada! Dentro do grupo, você recebe ${bet}, sem precisar estudar o jogo sozinho.`;
+  const proof = `+300K membros copiando no futebol todo dia, no grupo de odds altas que mais crava no Brasil.`;
+
+  const mm = String(Math.floor(cdSeconds/60)).padStart(2,'0');
+  const ss = String(cdSeconds%60).padStart(2,'0');
+
+  return `
+  <div class="relative min-h-[100dvh] px-5 pt-10 pb-36">
+    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse at 50% 20%, hsl(220 30% 15%) 0%, hsl(220 18% 8%) 70%)"></div>
+    </div>
+    <div class="mx-auto flex w-full max-w-md flex-col">
+      <div class="animate-slide-up text-center">
+        <div class="relative mx-auto h-24 w-24">
+          <span class="absolute inset-0 rounded-full" style="background:#22C55E; opacity:.35; animation:vipPulse 2s ease-out infinite"></span>
+          <span class="absolute inset-0 rounded-full" style="background:#22C55E; opacity:.2; animation:vipPulse 2s ease-out .6s infinite"></span>
+          <div class="relative flex h-24 w-24 items-center justify-center rounded-full" style="background:linear-gradient(135deg,#22C55E,#16A34A); box-shadow:0 16px 40px -12px #22C55E; animation:vipPop .5s cubic-bezier(0.34,1.56,0.64,1) both">
+            <i data-lucide="check" class="text-white" style="width:48px;height:48px; animation:vipDraw .45s ease-out .25s both" stroke-width="3"></i>
+          </div>
+        </div>
+        <h1 class="mt-6 font-display text-[28px] font-bold leading-[1.1] tracking-tight sm:text-[34px]">
+          Sua vaga no <span style="color:#39E27E">Grupo VIP</span><br/>está reservada.
+        </h1>
+        <h2 class="mx-auto mt-4 max-w-[340px] font-display text-[16px] font-semibold leading-snug text-fg sm:text-[17px]">
+          Ele é o melhor lugar pra você pegar as entradas <span style="color:#39E27E">do Grupo VIP</span>.
+        </h2>
+        <p class="mx-auto mt-3 max-w-[320px] text-[13.5px] leading-relaxed text-mutedfg">${story}</p>
+        <p class="mx-auto mt-2 max-w-[320px] text-[12.5px] leading-relaxed text-mutedfg/85">${proof}</p>
+      </div>
+
+      <div class="mt-7 animate-slide-up rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md" style="animation-delay:120ms">
+        <div class="text-center">
+          <div class="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-danger">
+            <i data-lucide="timer" style="width:12px;height:12px"></i>Vaga expira em
+          </div>
+          <div class="mt-1 font-display text-[44px] font-bold leading-none tracking-tight tabular-nums text-white">
+            <span id="r-mm">${mm}</span><span class="opacity-40">:</span><span id="r-ss">${ss}</span>
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="flex items-center justify-between text-[11.5px]">
+            <span class="inline-flex items-center gap-1.5 font-semibold text-fg"><i data-lucide="users" class="icon-sm" style="color:#39E27E"></i>Vagas preenchidas</span>
+            <span class="font-bold tabular-nums" style="color:#39E27E">98%</span>
+          </div>
+          <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div class="h-full rounded-full transition-all duration-700" style="width:98%; background:linear-gradient(90deg,#12b866,#39E27E); box-shadow:0 0 12px #12b866"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 animate-slide-up" style="animation-delay:200ms">
+        <p class="mb-2 text-center text-[12px] font-semibold text-fg">Toque no botão abaixo e libere seu acesso agora:</p>
+        <div class="relative">
+          <span aria-hidden class="pointer-events-none absolute inset-0 rounded-md" style="background:#25D366; animation:vipCtaPulse 1.8s ease-out infinite"></span>
+          <button id="resultCta" class="relative h-16 w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] text-[16px] font-bold uppercase tracking-wide text-white shadow-cta hover:bg-[#1ebd5b]" style="animation:vipCtaBounce 2.4s ease-in-out infinite">
+            <i data-lucide="message-circle" class="icon-md"></i>
+            Entrar no Grupo VIP
+            <i data-lucide="arrow-right" class="icon-md"></i>
+          </button>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] text-mutedfg">
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="icon-sm" style="color:#39E27E"></i>Atendimento direto</span>
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="badge-check" class="icon-sm" style="color:#39E27E"></i>Acesso imediato</span>
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="lock" class="icon-sm" style="color:#39E27E"></i>100% seguro</span>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <div class="flex items-center justify-center gap-2">
+          <span class="inline-flex h-7 min-w-7 items-center justify-center rounded-full border-2 border-white/90 px-1.5 text-[11px] font-black text-white/90">+18</span>
+          <span class="text-[10.5px] font-semibold uppercase tracking-wider text-white/90">SPA/MF nº 2.098</span>
+        </div>
+        <p class="mt-2 text-center text-[10.5px] leading-relaxed text-white/55">
+          Jogue com responsabilidade. Apostas esportivas envolvem risco. Somente maiores de 18 anos. Termos e condições da casa se aplicam.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div id="stickyCta" class="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-4 pt-3 pb-4 transition-all duration-300 bg-gradient-to-t from-bg via-bg/95 to-transparent translate-y-4 opacity-0" style="padding-bottom:max(1rem,env(safe-area-inset-bottom))">
+      <div class="mx-auto w-full max-w-md">
+        <div class="mb-1.5 flex items-center justify-center gap-1 text-[10.5px] font-bold uppercase tracking-wider text-danger">
+          <i data-lucide="timer" style="width:12px;height:12px"></i>Vaga expira em <span id="r-mm-s">${mm}</span>:<span id="r-ss-s">${ss}</span>
+        </div>
+        <button id="stickyBtn" class="h-12 w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] text-[14px] font-bold uppercase tracking-wide text-white hover:bg-[#1ebd5b]">
+          <i data-lucide="message-circle" class="icon-sm"></i>Entrar no Grupo VIP <i data-lucide="arrow-right" class="icon-sm"></i>
+        </button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ===================== BIND ===================== */
+function bind(){
+  if(state.stage==='intro'){
+    initSlideToGoal(()=>{ state.stage='quiz'; state.stepIndex=0; render(); });
+  }
+  if(state.stage==='quiz'){
+    const step = STEPS[state.stepIndex];
+    if(step.kind==='question'){
+      const back = document.getElementById('qBack');
+      if(back) back.onclick = ()=>{ if(state.stepIndex>0){ state.stepIndex--; render(); } };
+      let chosen=null;
+      document.querySelectorAll('.opt').forEach(btn=>{
+        btn.onclick = ()=>{
+          if(chosen) return;
+          chosen = btn.dataset.opt;
+          document.querySelectorAll('.opt').forEach(b=>{
+            if(b===btn){
+              b.classList.add('border-primary','bg-secondary/80');
+              b.querySelector('.opt-icon').classList.remove('border-border','bg-secondary/60','text-mutedfg');
+              b.querySelector('.opt-icon').classList.add('border-primary/40','bg-primary/15','text-primary');
+              const c = b.querySelector('.opt-check');
+              c.classList.remove('border-border','text-transparent','bg-transparent');
+              c.classList.add('border-primary','bg-primary','text-primaryfg');
+            } else {
+              b.classList.add('opacity-40');
+            }
+            b.disabled = true;
+          });
+          setTimeout(()=>{
+            state.answers[step.q] = chosen;
+            if(state.stepIndex+1>=STEPS.length){ state.stage='analyzing'; render(); runAnalyzing(); }
+            else { state.stepIndex++; render(); }
+          }, 320);
+        };
+      });
+    } else {
+      // interstitial sliders
+      setupSlider('prints', 3);
+      setupSlider('bil', 3);
+      document.getElementById('interCta').onclick = ()=>{ state.stepIndex++; render(); };
+    }
+  }
+  if(state.stage==='analyzing'){ /* started in render trigger */ }
+  if(state.stage==='result'){
+    const cta = document.getElementById('resultCta');
+    const sticky = document.getElementById('stickyCta');
+    const stickyBtn = document.getElementById('stickyBtn');
+    cta.onclick = openLeadModal;
+    stickyBtn.onclick = openLeadModal;
+    const io = new IntersectionObserver(([e])=>{
+      const visible = !e.isIntersecting || e.intersectionRatio<0.4;
+      sticky.classList.toggle('translate-y-4', !visible);
+      sticky.classList.toggle('opacity-0', !visible);
+      sticky.classList.toggle('opacity-100', visible);
+      sticky.classList.toggle('pointer-events-auto', visible);
+    }, {threshold:[0,0.4,1]});
+    io.observe(cta);
+    setInterval(()=>{
+      const mm = String(Math.floor(cdSeconds/60)).padStart(2,'0');
+      const ss = String(cdSeconds%60).padStart(2,'0');
+      const a = document.getElementById('r-mm-s'); const b = document.getElementById('r-ss-s');
+      if(a) a.textContent = mm; if(b) b.textContent = ss;
+    }, 1000);
+  }
+}
+
+/* ===================== LEAD MODAL ===================== */
+function getUtms(){
+  const p = new URLSearchParams(window.location.search);
+  const keys = ['utm_source','utm_medium','utm_content','utm_campaign','utm_term','fbclid','criativo'];
+  const out = {};
+  keys.forEach(k=>{ const v = p.get(k); if(v) out[k]=v; });
+  return out;
+}
+function formatPhone(v){
+  const d = v.replace(/\D/g,'').slice(0,11);
+  if(d.length<=2) return d.length?`(${d}`:'';
+  if(d.length<=7) return `(${d.slice(0,2)}) ${d.slice(2)}`;
+  return `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+}
+function openLeadModal(){
+  if(document.getElementById('leadModal')) return;
+  const wrap = document.createElement('div');
+  wrap.id = 'leadModal';
+  wrap.className = 'fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in';
+  wrap.style.background = 'rgba(0,0,0,.72)';
+  wrap.innerHTML = `
+    <div class="relative w-full max-w-md rounded-3xl p-7 sm:p-8 shadow-2xl" style="background:#10363D; animation:vipPop .35s cubic-bezier(0.34,1.56,0.64,1) both">
+      <button id="lmClose" class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition" aria-label="Fechar">
+        <i data-lucide="x" class="icon-sm"></i>
+      </button>
+      <h3 class="font-display text-[30px] sm:text-[36px] font-extrabold leading-[0.95] uppercase text-white pr-8">Entre no grupo VIP</h3>
+      <p class="mt-3 text-[14px] sm:text-[15px]" style="color:#B9B59A">Preencha seus dados e garanta sua vaga agora.</p>
+      <form id="lmForm" class="mt-6 space-y-5" novalidate>
+        <div>
+          <label class="mb-2 block text-[11.5px] font-bold uppercase tracking-[0.18em] text-white">E-mail</label>
+          <input id="lmEmail" type="email" autocomplete="email" maxlength="255" placeholder="seu@email.com"
+            class="w-full rounded-full px-5 py-3.5 text-[15px] font-medium text-white placeholder-white/30 outline-none focus:ring-2 focus:ring-white/30 transition" style="background:#0C2A30; border:1px solid rgba(255,255,255,.08)"/>
+        </div>
+        <div>
+          <label class="mb-2 block text-[11.5px] font-bold uppercase tracking-[0.18em] text-white">Telefone / WhatsApp</label>
+          <input id="lmPhone" inputmode="numeric" autocomplete="tel" maxlength="16" placeholder="(00) 00000-0000"
+            class="w-full rounded-full px-5 py-3.5 text-[15px] font-medium text-white placeholder-white/30 outline-none focus:ring-2 focus:ring-white/30 transition" style="background:#0C2A30; border:1px solid rgba(255,255,255,.08)"/>
+        </div>
+        <p id="lmErr" class="hidden text-[12px] font-medium" style="color:#ff8a8a"></p>
+        <button id="lmSubmit" type="submit" class="mt-2 h-14 w-full inline-flex items-center justify-center gap-2 rounded-2xl text-[16px] font-extrabold uppercase tracking-wide text-white hover:opacity-95 disabled:opacity-60 transition shadow-lg" style="background:#22C55E; box-shadow:0 10px 30px -10px rgba(34,197,94,.55)">
+          <span id="lmBtnLabel">Garantir minha vaga</span>
+        </button>
+        <p class="text-center text-[12px]" style="color:rgba(255,255,255,.45)">Ao continuar você confirma ter 18 anos ou mais.</p>
+      </form>
+    </div>`;
+  document.body.appendChild(wrap);
+  lucide.createIcons();
+  const close = ()=>{ wrap.remove(); };
+  wrap.addEventListener('click', e=>{ if(e.target===wrap) close(); });
+  document.getElementById('lmClose').onclick = close;
+  const phoneEl = document.getElementById('lmPhone');
+  phoneEl.addEventListener('input', e=>{ e.target.value = formatPhone(e.target.value); });
+  document.getElementById('lmForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const errEl = document.getElementById('lmErr');
+    const btn = document.getElementById('lmSubmit');
+    const label = document.getElementById('lmBtnLabel');
+    errEl.classList.add('hidden');
+    const phoneDigits = phoneEl.value.replace(/\D/g,'');
+    const email = document.getElementById('lmEmail').value.trim();
+    if(phoneDigits.length<10){ errEl.textContent='Informe um WhatsApp válido com DDD.'; errEl.classList.remove('hidden'); return; }
+    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ errEl.textContent='E-mail inválido.'; errEl.classList.remove('hidden'); return; }
+    btn.disabled = true; label.textContent='Enviando...';
+    const lead = { telefone: phoneDigits };
+    if(email) lead.email = email;
+    const respostas = {};
+    Object.entries(state.answers).forEach(([k,v])=>{ if(v) respostas[k]=v; });
+    const utms = getUtms();
+    const payload = {
+      lead,
+      token: CONFIG.LEAD_TOKEN,
+      origem: CONFIG.ORIGEM,
+      event: 'novo_lead_quiz',
+      timestamp: new Date().toISOString(),
+    };
+    if(Object.keys(respostas).length) payload.respostas = respostas;
+    if(Object.keys(utms).length) payload.utm_params = utms;
+    try { localStorage.setItem('joaomarcal_lead_'+Date.now(), JSON.stringify(payload)); } catch(_){}
+    if(CONFIG.LEAD_ENDPOINT){
+      try {
+        fetch(CONFIG.LEAD_ENDPOINT, {
+          method:'POST',
+          mode:'no-cors',
+          headers:{'Content-Type':'text/plain;charset=utf-8'},
+          body: JSON.stringify(payload),
+          keepalive: true,
+        }).catch(function(){});
+      } catch(err){ console.warn('lead endpoint error', err); }
+    }
+    try {
+      if(window.fbq && CONFIG.FB_PIXEL_ID){
+        window.fbq('trackSingle',CONFIG.FB_PIXEL_ID,'Lead',{content_name:'João Marçal — Grupo VIP'});
+      }
+    } catch(_){}
+    window.location.href = REDIRECT_URL;
+  });
+}
+
+function setupSlider(prefix, count){
+  let i = 0;
+  const track = document.getElementById(prefix+'-track');
+  const dots = document.getElementById(prefix+'-dots');
+  dots.innerHTML = Array.from({length:count}).map((_,k)=>`<button data-i="${k}" class="${k===0?'w-6 bg-primary':'w-1.5 bg-border'} h-1.5 rounded-full transition-all"></button>`).join('');
+  const update = ()=>{
+    track.style.transform = `translateX(-${i*100}%)`;
+    dots.querySelectorAll('button').forEach((d,k)=>{
+      d.className = `${k===i?'w-6 bg-primary':'w-1.5 bg-border'} h-1.5 rounded-full transition-all`;
+    });
+  };
+  document.getElementById(prefix+'Prev').onclick = ()=>{ i=(i-1+count)%count; update(); };
+  document.getElementById(prefix+'Next').onclick = ()=>{ i=(i+1)%count; update(); };
+  dots.querySelectorAll('button').forEach(d=>d.onclick=()=>{ i=parseInt(d.dataset.i); update(); });
+  setInterval(()=>{ i=(i+1)%count; update(); }, prefix==='bil'?3500:4200);
+}
+
+/* ===================== META PIXELS ===================== */
+(function(){
+  if(!CONFIG.FB_PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',CONFIG.FB_PIXEL_ID);
+  fbq('track','PageView');
+})();
+
+render();
+</script>
