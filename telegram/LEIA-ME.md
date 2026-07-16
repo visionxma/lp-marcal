@@ -1,74 +1,69 @@
-# LPs JOÃO MARÇAL — Odds Altas & Grupo VIP
+# LP JOÃO MARÇAL — Grupo VIP (Telegram)
 
-As 2 landing pages do **João Marçal** (quiz + captação de leads): páginas
-**limpas e self-contained** (sem WordPress/Elementor), com um único bloco de
-configuração pra você editar.
+Landing page do **João Marçal** (quiz + captação de leads): página **limpa e
+self-contained** (sem WordPress/Elementor), com um único bloco de configuração
+pra editar. O lead preenche WhatsApp/e-mail, cai na **planilha do Google** e é
+redirecionado pro **Telegram**.
 
 ## Estrutura
 
 ```
-LPs-MARCAL/
-├── odds-altas/
-│   ├── index.html          ← a LP (arquivo único, self-contained)
-│   └── assets/
-│       └── hero.jpg        ← foto de fundo do hero (João Marçal)
+telegram/
 ├── grupo-vip/
-│   ├── index.html
+│   ├── index.html                     ← a LP (arquivo único, self-contained)
 │   └── assets/
-│       └── hero.jpg        ← foto de fundo do hero (João Marçal)
-├── _original/              ← fotos em alta + arquivos de trabalho (NÃO versionado)
+│       └── hero.jpg                   ← foto de fundo do hero (João Marçal)
+├── apps-script-leads-joaomarcal.gs    ← código do backend (Google Apps Script)
 └── LEIA-ME.md
 ```
 
-Cada `index.html` é **independente**: é só subir a pasta (`index.html` + `assets/`) em
-qualquer hospedagem. Usa Tailwind, Lucide e Google Fonts via CDN (precisa de internet).
+A LP é **independente**: é só subir a pasta `grupo-vip/` (`index.html` + `assets/`)
+em qualquer hospedagem. Usa Tailwind, Lucide e Google Fonts via CDN (precisa de internet).
 
-## Como pré-visualizar no seu Mac
+## Como pré-visualizar
 
-Abra o Terminal na pasta `LPs-MARCAL` e rode:
+Na pasta `telegram/`, rode:
 
 ```
 python3 -m http.server 8000
 ```
 
-Depois abra no navegador: `http://localhost:8000/odds-altas/` e `http://localhost:8000/grupo-vip/`.
+E abra `http://localhost:8000/grupo-vip/`.
 (Só dar duplo-clique no `index.html` também funciona na maioria dos navegadores.)
 
 ## ⚙️ Onde configurar (bloco CONFIG no topo do `<script>`)
 
 Abra o `index.html` e no comecinho do último `<script>` tem o bloco **CONFIG** — edite SÓ ali:
 
-| Campo | O que é | Padrão atual |
+| Campo | O que é | Estado atual |
 |---|---|---|
-| `LINK_TELEGRAM` / `LINK_COMUNIDADE` / `LINK_X1` | seus 3 links do João Marçal | `t.me/jotapemarcalfree` |
+| `LINK_TELEGRAM` / `LINK_COMUNIDADE` / `LINK_X1` | links do João Marçal | `t.me/jotapemarcalfree` |
 | `REDIRECT_URL` | pra onde o lead vai **depois** de preencher o form | `t.me/jotapemarcalfree` |
-| `LEAD_ENDPOINT` | URL do webhook (Apps Script) que **recebe** os dados do lead | já preenchido |
-| `LEAD_TOKEN` | token anti-spam enviado junto do lead (tem que bater com o backend) | já preenchido |
-| `FB_PIXEL_ID` | ID do Pixel da Meta | **`''` (vazio)** |
-| `ORIGEM` | identificador enviado no payload | `joaomarcal_odds_altas` / `joaomarcal_grupo_vip` |
+| `LEAD_ENDPOINT` | URL do Apps Script que grava o lead na planilha | ✅ conectado (planilha "Leads Marcal") |
+| `LEAD_TOKEN` | token anti-spam — tem que ser idêntico ao do Apps Script | ✅ configurado |
+| `FB_PIXEL_ID` | ID do Pixel da Meta | **`''` (vazio — sem rastreio)** |
+| `ORIGEM` | identificador enviado no payload | `joaomarcal_grupo_vip` |
 
-## ⚠️ O que conferir antes de ir pro ar
+## 📊 Planilha de leads (Google Sheets + Apps Script)
 
-1. **Webhook de leads (`LEAD_ENDPOINT`)** — já aponta pra um Apps Script. Confirme que
-   ele está publicado e recebendo os dados (a planilha do Google Sheets enchendo).
-2. **Token anti-spam (`LEAD_TOKEN`)** — o valor aqui **precisa ser idêntico** ao que o
-   Apps Script valida. Se trocar um, troque o outro, senão o backend descarta os leads.
-3. **Pixel da Meta (`FB_PIXEL_ID`)** — está **vazio**. Coloque o **seu** pra rastrear
-   PageView + Lead. Vazio = sem rastreio.
-4. **Confirmar o `REDIRECT_URL`** de cada página (ver tabela acima).
+- Os leads caem na planilha **Leads Marcal**, aba **Leads** (colunas: data/hora,
+  telefone, e-mail, origem, evento, respostas do quiz e UTMs).
+- O backend é o arquivo `apps-script-leads-joaomarcal.gs`, publicado como
+  **App da Web** no Google Apps Script (Executar como: Eu · Acesso: Qualquer pessoa).
+- **Se editar o script:** só salvar não atualiza o que está no ar — vá em
+  **Implantar → Gerenciar implantações → ✏️ → Versão: Nova versão → Implantar**
+  (a URL `/exec` continua a mesma).
+- **Se trocar o `LEAD_TOKEN`:** troque nos DOIS lados (script e `index.html`),
+  senão o backend descarta os leads silenciosamente.
 
-## Trocar copy / fotos
+## ⚠️ O que falta pra rastreio completo
 
-- **Copy:** está tudo em texto dentro do `<script>` (`renderIntro`, `renderStep`, `renderResult`,
-  `openLeadModal`…). É só procurar o texto e trocar.
-- **Foto hero:** substitua `assets/hero.jpg` (mesmo nome) ou aponte `BG_MOBILE`/`BG_DESKTOP` no JS.
-- As fotos em alta e arquivos de trabalho ficam em `_original/` (essa pasta **não** vai
-  pro Git).
+- **Pixel da Meta (`FB_PIXEL_ID`)** — está vazio. Coloque o seu pra rastrear
+  PageView + Lead.
 
 ## Observações
 
-- As duas páginas têm **1 pergunta** no quiz — dá pra adicionar mais perguntas no array
-  `STEPS`/`QUESTIONS` se quiser.
-- Textos de resultado (“+300K membros”, “98% das vagas”, bilhetes de exemplo, etc.) são
-  **exemplos** — ajuste pros números reais do João Marçal.
+- O quiz tem **1 pergunta** — dá pra adicionar mais no array `STEPS`/`QUESTIONS`.
+- Textos de resultado (“+300K membros”, “98% das vagas”, bilhetes de exemplo, etc.)
+  são **exemplos** — ajuste pros números reais do João Marçal.
 - Conteúdo é +18 / apostas: o aviso de jogo responsável foi mantido no rodapé.
