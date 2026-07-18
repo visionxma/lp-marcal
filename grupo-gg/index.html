@@ -964,6 +964,8 @@ Termos de uso  ·  Política de privacidade  ·  Jogo responsável</span>					</
   const REDIRECT   = 'https://t.me/jotapemarcalfree';
   // URL do App da Web do Google Apps Script (grava os leads na planilha).
   const SHEET_URL  = 'https://script.google.com/macros/s/AKfycbwEwijGO5LM69510e6PGyf6a9S31WMFKefajfGo6BUSKS6zQVRJwhAslMIflj7uqHFW/exec';
+  // Anti-spam: precisa ser IDÊNTICO ao LEAD_TOKEN do Apps Script.
+  const LEAD_TOKEN = 'joaomarcal_9ce1a13d45fe1e9d94c0b8c7';
 
   // Quiz removed: form shown directly. No quiz JS required.
 
@@ -1034,11 +1036,12 @@ Termos de uso  ·  Política de privacidade  ·  Jogo responsável</span>					</
 
     // Monta os dados do lead (mesmo formato que o seu Apps Script já espera)
     const payload = {
+      token: LEAD_TOKEN,
       lead: { email, telefone: formatPhone(phone) },
       origem: ORIGEM,
       event: EVENT_NAME,
       timestamp: new Date().toISOString(),
-      quiz_resposta: ''
+      respostas: ''
     };
     const utms = getUTMParams();
     if (utms) payload.utm_params = utms;
