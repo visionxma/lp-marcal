@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PH6BSFCX');</script>
+	<!-- End Google Tag Manager -->
 		<title>Grupo GG Grátis v1 &#8211; João Marçal</title>
 <meta name='robots' content='max-image-preview:large' />
 <style id="wp-img-auto-sizes-contain-inline-css">
@@ -77,6 +84,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 			</style>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-816 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-816">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH6BSFCX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 			<div data-elementor-type="wp-page" data-elementor-id="816" class="elementor elementor-816" data-elementor-settings="{&quot;ha_cmc_init_switcher&quot;:&quot;no&quot;}" data-elementor-post-type="page">
 				<div class="elementor-element elementor-element-3cf7e24 e-flex e-con-boxed e-con e-parent" data-id="3cf7e24" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false}">
 					<div class="e-con-inner">
@@ -1029,6 +1040,15 @@ Termos de uso  ·  Política de privacidade  ·  Jogo responsável</span>					</
     }
     if (!valid) return;
 
+    // ─── GTM: conversão de lead (envio válido do formulário) ────────────────────
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      lead_origem: ORIGEM,
+      lead_evento: EVENT_NAME,
+      metodo: 'form_popup'
+    });
+
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.classList.add('loading');
@@ -1080,6 +1100,12 @@ Termos de uso  ·  Política de privacidade  ·  Jogo responsável</span>					</
       if (e.key === 'Enter') document.getElementById('submitBtn').click();
     });
   });
+
+  // ─── GTM: clique manual em "Entrar Agora" (redireciona para o Telegram) ──────
+  document.getElementById('redirectBtn').addEventListener('click', () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'clique_entrar_grupo', destino: REDIRECT });
+  });
 </script>
 </body>
 </html>				</div>
@@ -1095,6 +1121,8 @@ Termos de uso  ·  Política de privacidade  ·  Jogo responsável</span>					</
     
     function abrirPopup(){
         popup.classList.add("ativo");
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'abrir_popup', cta_location: 'lp_grupo_gratis' });
     };
     
     function fecharPopup(){
